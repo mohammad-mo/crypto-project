@@ -8,7 +8,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <div
-        className='flex flex-col justify-center max-w-7xl py-5 px-2 sm:px-10 mx-auto'
+        className='py-5 px-2 sm:px-10'
         data-theme={`${!theme ? 'dark' : 'light'}`}
       >
         <Landing theme={theme} setTheme={setTheme} />

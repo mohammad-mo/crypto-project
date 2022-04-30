@@ -40,10 +40,10 @@ const Landing = ({ theme, setTheme }) => {
   if (loading) return <Loading />
 
   return (
-    <>
+    <div className='max-w-7xl mx-auto'>
       <div className='flex justify-between items-center mb-10 space-x-3'>
         <input
-          className='input input-bordered input-success w-full max-w-xs'
+          className='input input-bordered input-accent w-full max-w-xs'
           type='search'
           placeholder='Find your coin...'
           value={seacrh}
@@ -95,7 +95,7 @@ const Landing = ({ theme, setTheme }) => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   )
 }
 
