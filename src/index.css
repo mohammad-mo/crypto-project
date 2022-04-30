@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.progress:indeterminate::after {
+  animation: progress-loading 1s infinite ease-in-out;
+}
