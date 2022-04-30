@@ -45,7 +45,7 @@ const Landing = () => {
         <input
           className='input input-bordered input-success w-full max-w-xs'
           type='search'
-          placeholder='Coins...'
+          placeholder='Find your coin...'
           value={seacrh}
           onChange={changeHandler}
         />
