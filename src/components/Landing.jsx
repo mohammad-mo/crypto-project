@@ -40,7 +40,7 @@ const Landing = ({ theme, setTheme }) => {
   if (loading) return <Loading />
 
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto min-h-screen'>
       <div className='flex justify-between items-center mb-10 space-x-3'>
         <input
           className='input input-bordered input-accent w-full max-w-xs'
