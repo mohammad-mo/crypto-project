@@ -8,7 +8,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <div
-        className='py-5 px-2 sm:px-10'
+        className='py-5 px-2 sm:px-10 min-h-screen'
         data-theme={`${!theme ? 'dark' : 'light'}`}
       >
         <Landing theme={theme} setTheme={setTheme} />
