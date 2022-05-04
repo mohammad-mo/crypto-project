@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { CoinContext } from '../context/CoinContext'
+import { ThemeContext } from '../context/ThemeContext'
 
 // API
 import { getCoin } from '../services/api'
@@ -7,9 +8,11 @@ import { getCoin } from '../services/api'
 // Components
 import Loading from './Loading'
 import Coin from './Coin'
+import { Link } from 'react-router-dom'
 
-const Landing = ({ theme, setTheme }) => {
+const Landing = () => {
   const { coins, loading, dispatch } = useContext(CoinContext)
+  const { toggleHandler } = useContext(ThemeContext)
 
   const [seacrh, setSeacrh] = useState('')
 
@@ -23,10 +26,6 @@ const Landing = ({ theme, setTheme }) => {
       }
     }
     fetchApi()
-
-    return () => {
-      isComponentMounted = false
-    }
   }, [dispatch])
 
   const filteredCoins = coins.filter((coin) =>
@@ -50,7 +49,7 @@ const Landing = ({ theme, setTheme }) => {
           onChange={changeHandler}
         />
         <label className='swap swap-rotate'>
-          <input type='checkbox' onClick={() => setTheme(!theme)} />
+          <input type='checkbox' onClick={toggleHandler} />
           <svg
             className='swap-on fill-current w-8 h-8'
             xmlns='http://www.w3.org/2000/svg'
@@ -83,6 +82,7 @@ const Landing = ({ theme, setTheme }) => {
             {filteredCoins.map((coin) => (
               <Coin
                 key={coin.id}
+                id={coin.id}
                 rank={coin.market_cap_rank}
                 name={coin.name}
                 image={coin.image}

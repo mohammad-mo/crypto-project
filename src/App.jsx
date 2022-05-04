@@ -1,17 +1,25 @@
 import Landing from './components/Landing'
 import ErrorBoundary from './components/ErrorBoundary'
-import { useState } from 'react'
+import SingleCoin from './components/SingleCoin'
+
+import { useState, useContext } from 'react'
+import { Routes, Route } from 'react-router-dom'
+
+import { ThemeContext } from './context/ThemeContext'
 
 const App = () => {
-  const [theme, setTheme] = useState('')
+  const { toggle } = useContext(ThemeContext)
 
   return (
     <ErrorBoundary>
       <div
         className='py-5 px-2 sm:px-10 min-h-screen'
-        data-theme={`${!theme ? 'dark' : 'light'}`}
+        data-theme={`${!toggle ? 'dark' : 'light'}`}
       >
-        <Landing theme={theme} setTheme={setTheme} />
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='coins/:name' element={<SingleCoin />} />
+        </Routes>
       </div>
     </ErrorBoundary>
   )

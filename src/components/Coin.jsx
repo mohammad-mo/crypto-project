@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom"
+
 const Coin = ({ rank, name, image, symbol, price, marketCap, priceChange }) => {
   return (
     <tr>
       <th>{rank}</th>
       <td>
+      <Link to={`coins/${name}`}>
         <div className='flex items-center space-x-3'>
           <div className='avatar'>
             <div className='mask mask-squircle w-10 h-10'>
@@ -13,6 +16,7 @@ const Coin = ({ rank, name, image, symbol, price, marketCap, priceChange }) => {
             <div className='font-bold'>{name}</div>
           </div>
         </div>
+        </Link>
       </td>
       <td>{symbol.toUpperCase()}</td>
       <td>$ {price.toLocaleString()}</td>
