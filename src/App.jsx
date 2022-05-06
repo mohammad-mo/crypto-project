@@ -2,7 +2,7 @@ import Landing from './components/Landing'
 import ErrorBoundary from './components/ErrorBoundary'
 import SingleCoin from './components/SingleCoin'
 
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import { ThemeContext } from './context/ThemeContext'

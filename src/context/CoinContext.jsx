@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react'
-import Reducer from './Reducer'
+import coinReducer from './coinReducer'
 
 export const CoinContext = createContext()
 
@@ -9,7 +9,7 @@ const CoinContextProvider = ({ children }) => {
     loading: false,
   }
 
-  const [state, dispatch] = useReducer(Reducer, initialState)
+  const [state, dispatch] = useReducer(coinReducer, initialState)
 
   return (
     <CoinContext.Provider value={{ ...state, dispatch }}>
