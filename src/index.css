@@ -5,3 +5,24 @@
 .progress:indeterminate::after {
   animation: progress-loading 1s infinite ease-in-out;
 }
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(134, 134, 134, 0.5);
+  border: transparent;
+  border-radius: 0.3rem;
+}

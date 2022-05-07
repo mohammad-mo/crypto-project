@@ -48,10 +48,13 @@ const SingleCoin = () => {
               </svg>
             </label>
           </div>
-          <div className='avatar flex justify-center my-10'>
+          <div className='avatar flex flex-col items-center my-10'>
             <div className='w-36 mask mask-squircle'>
               <img src={coinName.image} alt={coinName.name} />
             </div>
+            <h2 className='text-2xl sm:text-4xl mt-5 font-semibold text-center'>
+              {coinName.name}
+            </h2>
           </div>
           <div className='card border-accent border-2 p-5 max-w-3xl mx-auto overflow-x-auto'>
             <table className='table'>
@@ -61,7 +64,7 @@ const SingleCoin = () => {
                   <td>#{coinName.market_cap_rank}</td>
                 </tr>
                 <tr>
-                  <td>{coinName.name} Price</td>
+                  <td>Price</td>
                   <td>${coinName.current_price.toLocaleString()}</td>
                 </tr>
                 <tr>
