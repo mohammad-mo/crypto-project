@@ -113,7 +113,7 @@ const SingleCoin = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td>All-Time Hight Date</td>
+                  <td>All-Time High Date</td>
                   <td>
                     {new Date(coinName.ath_date).toISOString().slice(0, 10)}
                   </td>
